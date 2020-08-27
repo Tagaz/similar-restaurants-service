@@ -9,7 +9,20 @@ app.use('/:id', express.static('public'));
 app.use(cors());
 app.use(express.json());
 
-app.get('/restaurants/:id', (req, res) => {
+// Create
+app.post('api/restaurants/', (req, res) => {
+  console.log('req.body', req.body)
+  db.createRestaurant(req.body)
+    .then(() => {
+      res.senStatus(200).send('Restaurant was created');
+    })
+    .catch(() => {
+      res.status(500)
+    })
+})
+
+// Read
+app.get('api/restaurants/:id', (req, res) => {
   const allData = {};
   const argsTitle = [req.params.id];
   return db.getTitle(argsTitle)
@@ -41,6 +54,34 @@ app.get('/restaurants/:id', (req, res) => {
       res.status(500).send('error in getting the data from the db');
     });
 });
+
+
+// Update
+app.put('api/restaurants/:id', (req, res) => {
+  db.updateRestaurant(req.params.id, req.body)
+  .then(() => {
+    res.status(202)
+  })
+  .catch(() => {
+    res.status(500)
+  })
+})
+
+// Delete
+app.delete('/restaurants/:id', (req, res) => {
+  db.deletePhotos(req.params.id)
+    .then(() => {
+      db.deleteRestaurant(req.params.id)
+        .then(() => {
+          res.status(202)
+        })
+    })
+    .catch(() => {
+      res.status(500)
+    })
+})
+
+
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console

@@ -21,9 +21,18 @@ while (rId <= 701) {
 
 let pId = 1;
 while (pId <= 3501) {
-  const imageId = Math.floor(Math.random() * (80 - 1) + 1);
-  const url = `https://zigat.s3-us-west-1.amazonaws.com/image${imageId}.jpg`;
-  const restaurantId = Math.floor(Math.random() * (691 - 1) + 1);
+  const imageId = Math.floor(Math.random() * (750 - 1) + 1);
+  const numString = imageId.toString();
+  let finalId = '';
+  if (numString.length === 1) {
+    finalId = '000' + numString;
+  } else if (numString.length === 2) {
+    finalId = '00' + numString;
+  } else if (numString.length === 3) {
+    finalId = '0' + numString;
+  }
+  const url = `https://tagaz-similar-restaurant-service.s3.us-east-2.amazonaws.com/FEC_photos/${finalId}.jpg`;
+  const restaurantId = Math.floor(Math.random() * (701 - 1) + 1);
   db.seedDataPhotos(url, restaurantId);
   pId += 1;
 }
