@@ -22,6 +22,20 @@ npm start
 npm run build
 ```
 
+```sh
+CRUD API CALLS: 
+Create - app.post('/restaurants/') 
+Read - app.get('/restaurant/:id')
+Update - app.put('/restaurants/:id')
+Delete - app.delete('/restaurnats/:id')
+```
+
+Create - creates a new restaurant with the supplied information
+Read - will grab an array with all of the information for that id
+Update - will update the restaurant at that id with the new information
+Delete - deletes the restaurant at that id
+
+
 If there are no similar restaurants the module doesn't render.
 
 ## Requirements
