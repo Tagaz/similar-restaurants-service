@@ -19,7 +19,7 @@ CREATE TABLE restaurants (
 
 CREATE TABLE photos (
   pid int AUTO_INCREMENT,
-  url varchar(70),
+  url varchar(100),
   restaurant_id int,
   PRIMARY KEY (pid),
   FOREIGN KEY (restaurant_id)
