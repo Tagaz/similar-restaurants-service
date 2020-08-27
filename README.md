@@ -31,8 +31,11 @@ Delete - app.delete('/restaurnats/:id')
 ```
 
 Create - creates a new restaurant with the supplied information
+
 Read - will grab an array with all of the information for that id
+
 Update - will update the restaurant at that id with the new information
+
 Delete - deletes the restaurant at that id
 
 
