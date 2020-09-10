@@ -24,3 +24,18 @@ __coverage__/
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 dist/
+
+cassdata.csv
+cassneighdata.csv
+data.csv
+photodata.csv
+newrelic.js
+randomnumber.js
+artillery.yaml
+server/restaurantdatagen.js
+restaurantcategories.csv
+restaurantdata.csv
+restaurantphotos.csv
+restaurantneighborhoods.csv
+CassandraDB
+Similar-Restaurants.pem
