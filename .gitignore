@@ -29,9 +29,7 @@ cassdata.csv
 cassneighdata.csv
 data.csv
 photodata.csv
-newrelic.js
 randomnumber.js
-artillery.yaml
 server/restaurantdatagen.js
 restaurantcategories.csv
 restaurantdata.csv
