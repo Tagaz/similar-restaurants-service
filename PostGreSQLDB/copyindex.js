@@ -1,13 +1,14 @@
 const pgp = require('pg-promise')();
-const { Client } = require('pg');
 
-const connectionString = 'postgres://blakejones@localhost/zagatsimilarrestaurants';
+const cn = {
+  user: 'postgres',
+  host: '3.12.154.133',
+  port: 5432,
+  database: 'zagatsimilarrestaurants',
+  password: 'postgres'
+};
 
-// const client = new Client({connectionString});
-
-// client.connect();
-
-const db = pgp(connectionString);
+const db = pgp(cn);
 
 const fetchRestaurants = (id) => {
   return new Promise((resolve, reject) => {

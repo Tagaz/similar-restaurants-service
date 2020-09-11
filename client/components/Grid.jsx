@@ -7,8 +7,6 @@ import CardsList from './CardsList.jsx';
 // eslint-disable-next-line import/extensions
 import GridHeader from './GridHeader.jsx';
 
-const host = 'http://localhost:3004';
-
 const Container = styled.div`
   background-color: rgb(250,250,250);
   width: 100%;
@@ -37,7 +35,7 @@ class Grid extends React.Component {
   }
 
   getInfo(id) {
-    axios.get(`${host}/restaurants/${id}`)
+    axios.get(`/restaurants/${id}`)
       .then((res) => {
         this.setState({
           currentName: res.data.restaurant.name,
